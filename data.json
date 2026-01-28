@@ -1,7 +1,10 @@
 {
+    "id" : "A001",
     "title": "Loveless",
     "author": "Alice Oseman",
     "datePublished": null,
-    "rating": "4"
+    "rating": "4",
+    "status": "read",
+    "img": ""
 
 }
