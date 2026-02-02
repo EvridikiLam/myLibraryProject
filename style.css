@@ -3,7 +3,7 @@ body {
     font-family: 'Trebuchet MS', sans-serif;
 }
 
-h1{
+h1 {
     color: #87255B;
 }
 
@@ -12,9 +12,67 @@ h1{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
 }
 
+input,
+select {
+    margin: 5px;
+    width: 450px;
+    
+}
+
+#notes {
+    width: 450px;
+    height: 100px;
+    padding:7px;
+    border: solid;
+    border-width: 2px;
+    border-radius: 30px;
+    border-color: #87255B;
+    background-color: #fcf0ff;
+}
+input[type=text] {
+    padding: 7px;
+    border: solid;
+    border-width: 2px;
+    border-radius: 30px;
+    border-color: #87255B;
+    background-color: #fcf0ff;
+}
+
+select {
+    padding: 7px;
+    width: 450px;
+    border: solid;
+    border-width: 2px;
+    border-radius: 30px;
+    border-color: #87255B;
+    background-color: #fcf0ff;
+}
 ::selection {
-        background: #87255B;
-        color:#fcf0ff;
-    }
+    background: #87255B;
+    color: #fcf0ff;
+}
+
+#status {
+  width: 450px;
+  padding: 5px 5px;
+  font-size: 16px;
+  border: 2px solid #87255B;
+  border-radius: 30px;
+  background-color: #fcf0ff;
+  color: #000;
+
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%238b2d5c'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+  background-size: 22px;
+   
+  cursor: pointer;
+
+}

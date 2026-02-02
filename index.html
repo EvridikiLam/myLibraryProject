@@ -19,21 +19,26 @@
       <h1>My Library</h1>
       <h2>Add a new book:</h2>
       <form id="#bookForm">
-        <label for="btitle">Book Title</label>
-        <input type="text" id="btitle" name="btitle" /> <br />
-        <label for="bauthor">Author</label>
-        <input type="text" id="bauthor" name="bauthor" /><br />
+        <div class="inputfield">
+          <!-- <label for="btitle">Book Title</label> -->
+          <input type="text" id="btitle" name="btitle" placeholder="Book Title"/> <br />
+          <!-- <label for="bauthor">Author</label> -->
+          <input type="text" id="bauthor" name="bauthor" placeholder="Author"/><br />
+        </div>
+
         <div>
-          <label for="status">Status:</label>
-          <select name="status" id="status">
+          <!-- <label for="status">Status:</label> -->
+          <select name="status" id="status" aria-placeholder="Status" >
+            <option value="" disabled selected hidden>Status</option>
             <option value="read">Read</option>
             <option value="reading">Reading</option>
             <option value="want">Want to read</option>
           </select>
         </div>
+
         <div>
-          <label for="rating">Rating (1-5)</label>
-          <select name="rating" id="rating">
+          <!-- <label for="rating">Rating (1-5)</label> -->
+          <select name="rating" id="rating" aria-placeholder="Rating(1-5)">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -41,9 +46,10 @@
             <option value="5">5</option>
           </select>
         </div>
-        <div>
-          <label for="notes">Write your personal notes</label>
-          <input type="text" id="notes" name="notes" />
+        <div class="inputfield">
+          <label for="notes">Write your personal notes</label> <br>
+          <textarea name="notes" id="notes" ></textarea>
+          
         </div>
         <div>
           <label for="cover">Add Book's cover picture:</label><br />

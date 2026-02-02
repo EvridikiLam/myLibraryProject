@@ -18,3 +18,26 @@ form.addEventListener("submit", function(e) {
   books.push(book);
   saveBooks();
 });
+
+function saveBooks() {
+  localStorage.setItem("books", JSON.stringify(books));
+}
+
+window.addEventListener("DOMContentLoaded", renderBooks);
+
+function renderBooks() {
+  const container = document.querySelector("#bookList");
+  container.innerHTML = "";
+
+  books.forEach(book => {
+    const div = document.createElement("div");
+    div.innerHTML = `
+      <h3>${book.title}</h3>
+      <p>${book.author}</p>
+      <p>Status: ${book.status}</p>
+      <p>Rating: ${book.rating}</p>
+      <p>${book.notes}</p>
+    `;
+    container.appendChild(div);
+  });
+}
