@@ -1,3 +1,20 @@
 body {
-    background-color: #d97fef;
+    background-color: #fcf0ff;
+    font-family: 'Trebuchet MS', sans-serif;
 }
+
+h1{
+    color: #87255B;
+}
+
+#bform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+::selection {
+        background: #87255B;
+        color:#fcf0ff;
+    }
