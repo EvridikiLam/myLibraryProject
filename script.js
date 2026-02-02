@@ -1,43 +1,32 @@
-//If there are saved books in array load them, if not empty array
-let books = JSON.parse(localStorage.getItem("books")) || [];
+const form = document.getElementById("bookForm");
 
-const form = document.querySelector("#bookForm");
+form.addEventListener("submit",function (e) {
+    e.preventDefault(); //stop page refresh
 
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
+    const formData = {
+        btitle: document.getElementById("btitle"),
+        bauthor: document.getElementById("bauthor"),
+        bstatus: document.getElementById("bstatus"),
+        rating: document.getElementById("rating"),
+        notes: document.getElementById("notes"),
+    };
 
-  const book = {
-    id: Date.now(),
-    title: document.querySelector("#btitle").value,
-    author: document.querySelector("#bauthor").value,
-    status: document.querySelector("#status").value,
-    rating: document.querySelector("#rating").value,
-    notes: document.querySelector("#notes").value
-  };
+    localStorage.setItem("userFormData",JSON.stringify(formData));
 
-  books.push(book);
-  saveBooks();
+    alert("Form data saved!");
 });
 
-function saveBooks() {
-  localStorage.setItem("books", JSON.stringify(books));
-}
+//load saved data
+window.addEventListener("DOMContentLoaded",function () {
+    const savedData = this.localStorage.getItem("userFormData");
 
-window.addEventListener("DOMContentLoaded", renderBooks);
+    if (savedData) {
+        const data = JSON.parse(savedData);
 
-function renderBooks() {
-  const container = document.querySelector("#bookList");
-  container.innerHTML = "";
-
-  books.forEach(book => {
-    const div = document.createElement("div");
-    div.innerHTML = `
-      <h3>${book.title}</h3>
-      <p>${book.author}</p>
-      <p>Status: ${book.status}</p>
-      <p>Rating: ${book.rating}</p>
-      <p>${book.notes}</p>
-    `;
-    container.appendChild(div);
-  });
-}
+        document.getElementById("btitle").value = data.btitle || "";
+        document.getElementById("bauthor").value = data.bauthor || "";
+        document.getElementById("bstatus").value = data.bstatus || "";
+        document.getElementById("rating").value = data.rating || "";
+        document.getElementById("notes").value = data.notes || "";
+    }
+})
